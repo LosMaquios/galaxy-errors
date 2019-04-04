@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="module">
+    import GalaxyError from './src/index.js'
+
+    const code = `Hello, {{ #getName() }}`
+
+    throw GalaxyError.build(
+      'INVALID_TEMPLATE_EXPRESSION',
+      'invalid template expression',
+      code,
+      {
+        start: code.indexOf('#'),
+        end: code.indexOf(')')
+      }
+    )
+  </script>
+</body>
+</html>
