@@ -9,7 +9,7 @@ import GalaxyError from '@galaxy/errors'
 
 const code = 'Hello, {{ #getName() }}'
 
-const error = GalaxyError.build(
+const error = GalaxyError.capture(
   'INVALID_TEMPLATE_EXPRESSION',
   'invalid template expression',
   code,
